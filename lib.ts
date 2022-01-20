@@ -87,7 +87,7 @@ export const ManagedTransaction: ClassDecorator = (target) => {
   }
 };
 
-const UsingManagedTransaction: PropertyDecorator = (target, key) => {
+export const UsingManagedTransaction: PropertyDecorator = (target, key) => {
   //자기 자신의 필드명을 메타데이터의 값으로 저장.
   Reflect.defineMetadata(TARGET_MANAGED_TRANSACTION, key, target);
 };

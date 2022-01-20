@@ -1,6 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.ManagedTransaction = void 0;
+exports.UsingManagedTransaction = exports.ManagedTransaction = void 0;
 require("reflect-metadata");
 const TARGET_MANAGED_TRANSACTION = Symbol("TARGET_MANAGED_TRANSACTION");
 const ManagedTransaction = (target) => {
@@ -55,4 +55,5 @@ exports.ManagedTransaction = ManagedTransaction;
 const UsingManagedTransaction = (target, key) => {
     Reflect.defineMetadata(TARGET_MANAGED_TRANSACTION, key, target);
 };
+exports.UsingManagedTransaction = UsingManagedTransaction;
 //# sourceMappingURL=lib.js.map
