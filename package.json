@@ -1,0 +1,17 @@
+{
+  "name": "managed-typeorm-for-nest",
+  "version": "1.0.0",
+  "description": "",
+  "main": "./dist/lib.js",
+  "scripts": {
+    "start": "ts-node ./lib.ts"
+  },
+  "keywords": [
+    "nestjs/typeorm"
+  ],
+  "author": "egoavara",
+  "license": "MIT",
+  "dependencies": {
+    "reflect-metadata": "^0.1.13"
+  }
+}
