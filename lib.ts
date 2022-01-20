@@ -47,15 +47,17 @@ export const ManagedTransaction: ClassDecorator = (target) => {
         // 아래 기능들은 type safe 하지 않은 코드들이라 컴파일러 침묵이 불가피
         // @ts-ignore
         const nthis = Object.create(this);
-        Reflect.get();
         // @ts-ignore
-        return await this.em.transaction(async (transem) => {
-          Reflect.defineProperty(nthis, usingManagedTransaction, {
-            value: transem,
-          });
-          const result = await ownDesc?.value.call(nthis, ...args);
-          return result;
-        });
+        return await Reflect.get(this, usingManagedTransaction).transaction(
+          // @ts-ignore
+          async (transem) => {
+            Reflect.defineProperty(nthis, usingManagedTransaction, {
+              value: transem,
+            });
+            const result = await ownDesc?.value.call(nthis, ...args);
+            return result;
+          }
+        );
       };
       // inner 함수의 디스크립터 수정
       // 이 값을 설정함으로서 원본 메서드를 완전히 대체할 수 있는 함수를 생성 가능함
