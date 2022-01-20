@@ -1,10 +1,19 @@
 {
   "name": "managed-typeorm-for-nest",
   "version": "1.0.0",
-  "description": "",
+  "description": "This library is for internal use. If you don't know what it is, DO NOT USE IT.",
   "main": "./dist/lib.js",
+  "homepage": "https://github.com/iamGreedy/managed-typeorm-for-nest",
+  "bugs": {
+    "url": "https://github.com/iamGreedy/managed-typeorm-for-nest/issues",
+    "email": "egoavara@gmail.com"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/iamGreedy/managed-typeorm-for-nest"
+  },
   "scripts": {
-    "start": "ts-node ./lib.ts"
+    "build": "tsc"
   },
   "keywords": [
     "nestjs/typeorm"
