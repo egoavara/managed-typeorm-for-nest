@@ -47,6 +47,7 @@ export const ManagedTransaction: ClassDecorator = (target) => {
         // 아래 기능들은 type safe 하지 않은 코드들이라 컴파일러 침묵이 불가피
         // @ts-ignore
         const nthis = Object.create(this);
+        Reflect.get();
         // @ts-ignore
         return await this.em.transaction(async (transem) => {
           Reflect.defineProperty(nthis, usingManagedTransaction, {
